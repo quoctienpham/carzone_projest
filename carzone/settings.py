@@ -118,4 +118,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+# URL được sử dụng đễ tham chiếu đến các tệp tĩnh
 STATIC_URL = '/static/'
+
+# Đường dẫn tuyệt đối đến thư mục nơi các tệp tĩnh sẽ được thu thập.
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# Các thư mục nơi Django sẽ tìm kiếm các tệp tĩnh bổ sung.
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'carzone/static'),
+]
