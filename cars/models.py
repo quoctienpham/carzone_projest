@@ -66,6 +66,9 @@ class Car(models.Model):
     features_choices = (
         ('Cruise Control', 'Cruise Control'),
         ('Audio Interface', 'Audio Interface'),
+        ('Anti-theft Protection', 'Anti-theft Protection'),
+        ('Automatic Climate Control', 'Automatic Climate Control'),
+        ('Automatic Headlights', 'Automatic Headlights'),
         ('Airbags', 'Airbags'),
         ('Air Conditioning', 'Air Conditioning'),
         ('Seat Heating', 'Seat Heating'),
@@ -77,6 +80,11 @@ class Car(models.Model):
         ('Auto Start/Stop', 'Auto Start/Stop'),
         ('Wind Deflector', 'Wind Deflector'),
         ('Bluetooth Handset', 'Bluetooth Handset'),
+        ('BOSE Surround Sound', 'BOSE Surround Sound'),
+        ('Adaptive Cruise Control', 'Adaptive Cruise Control'),
+        ('Burmester Surround Sound', 'Burmester Surround Sound'),
+        ('Bi-Xenon Headlights', 'Bi-Xenon Headlights'),
+        ('CD/DVD Autochanger', 'CD/DVD Autochanger'),
     )
 
     door_choices = (
@@ -88,6 +96,7 @@ class Car(models.Model):
     )
 
     car_title = models.CharField(max_length=255)
+    brand = models.CharField(max_length = 100)
     state = models.CharField(choices=state_choice, max_length=100)
     city = models.CharField(max_length=100)
     color = models.CharField(max_length=100)
@@ -116,6 +125,8 @@ class Car(models.Model):
     no_of_owners = models.CharField(max_length=100)
     is_featured = models.BooleanField(default=False)
     created_date = models.DateTimeField(default=datetime.now, blank=True)
+    waeeanty = models.CharField(max_length=100)
+    
 
     def __str__(self):
         return self.car_title
